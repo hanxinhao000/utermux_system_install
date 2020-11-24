@@ -31,6 +31,15 @@ android {
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
+    subprojects {
+        afterEvaluate { project ->
+            if (project.name == "plugin_that_causes_the_issue") {
+                android {
+                    compileSdkVersion 28
+                }
+            }
+        }
+    }
 
     lintOptions {
         disable 'InvalidPackage'
@@ -46,11 +55,21 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+
+    signingConfigs {
+        release {
+            keyAlias 'phone1'
+            keyPassword '654321'
+            storeFile file('C:\\Users\\Administrator\\Desktop\\phone\\phone.jks')
+            storePassword '123456'
+        }
+    }
+
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
         }
     }
 }
@@ -64,4 +83,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    implementation 'androidx.appcompat:appcompat:1.0.0-alpha1'
 }

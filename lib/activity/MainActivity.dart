@@ -306,7 +306,7 @@ class MainActivityView extends State<MainActivityState> {
 
 
 
-    UUtils.launchUrl("https://www.baidu.com/", (){
+    UUtils.launchUrl("https://github.com/hanxinhao000/utermux_system_install", (){
 
       setState(() {
 
