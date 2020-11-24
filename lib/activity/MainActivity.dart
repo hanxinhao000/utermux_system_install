@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import 'package:http_server/http_server.dart';
 import 'package:utermux_system_install/utils/UUtils.dart';
-void main()=> runApp(MainActivity());
+
 class MainActivity extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
