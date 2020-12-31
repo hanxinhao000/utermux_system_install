@@ -39,7 +39,7 @@ class MainActivityState extends StatefulWidget{
 class MainActivityView extends State<MainActivityState> {
 
   String loading = "0%";
-  String vision = "v32";
+  String vision = "v33";
   String msg = "开始日志:";
   @override
   Widget build(BuildContext context) {
@@ -212,7 +212,7 @@ class MainActivityView extends State<MainActivityState> {
           });
 
           if(!(await _sdFilePathAarch64.exists())){
-        UUtils.assetsWriterFile("assets/bootstrap_aarch64_v32.zip", _sdFilePathAarch64);
+        UUtils.assetsWriterFile("assets/bootstrap-aarch64-v33.zip", _sdFilePathAarch64);
         setState(() {
         msg +="写出文件:${_sdFilePathArm.path}\n";
 
@@ -228,7 +228,7 @@ class MainActivityView extends State<MainActivityState> {
         loading = "50%";
         });
         if(!(await _sdFilePathArm.exists())){
-        UUtils.assetsWriterFile("assets/bootstrap-arm-v32.zip", _sdFilePathArm);
+        UUtils.assetsWriterFile("assets/bootstrap-arm-v33.zip", _sdFilePathArm);
         setState(() {
 
         msg +="写出文件:${_sdFilePathI686.path}\n";
@@ -245,7 +245,7 @@ class MainActivityView extends State<MainActivityState> {
 
         });
         if(!(await _sdFilePathI686.exists())){
-        UUtils.assetsWriterFile("assets/bootstrap-i686-v32.zip", _sdFilePathI686);
+        UUtils.assetsWriterFile("assets/bootstrap-i686-v33.zip", _sdFilePathI686);
         setState(() {
 
         msg +="写出文件:${_sdFilePathX86_64.path}\n";
@@ -262,7 +262,7 @@ class MainActivityView extends State<MainActivityState> {
 
         });
         if(!(await _sdFilePathX86_64.exists())){
-        UUtils.assetsWriterFile("assets/bootstrap-x86_64-v32.zip", _sdFilePathX86_64);
+        UUtils.assetsWriterFile("assets/bootstrap-x86_64-v33.zip", _sdFilePathX86_64);
         setState(() {
 
         msg +="写出文件:${_sdFilePathX86_64.path}\n";
