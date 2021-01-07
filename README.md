@@ -1,6 +1,6 @@
 # utermux_system_install
 
-# 专门为UT准备的本地下载服务器，当前termux系统版本为v32版本
+# 专门为UT准备的本地下载服务器，当前termux系统版本为v33版本
 
 # 使用方法:
 
