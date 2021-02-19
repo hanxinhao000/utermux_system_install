@@ -37,9 +37,9 @@ class MainActivityState extends StatefulWidget{
 }
 
 class MainActivityView extends State<MainActivityState> {
-  var name = "-2021-r1";
+  var name = "-v32";
   String loading = "0%";
-  String vision = "2021-r1";
+  String vision = "-2021-r1";
   String msg = "开始日志:";
   @override
   Widget build(BuildContext context) {
@@ -210,19 +210,19 @@ class MainActivityView extends State<MainActivityState> {
 
           setState(() {
             loading = "25%";
-            msg +="写出文件:${_sdFilePathAarch64.path}\n";
+            msg +="写出文件:${_sdFilePathAarch64.path.replaceAll("v32", vision)}\n";
           });
 
           if(!(await _sdFilePathAarch64.exists())){
-        UUtils.assetsWriterFile("assets/bootstrap-aarch64$name.zip", _sdFilePathAarch64);
+        UUtils.assetsWriterFile("assets/bootstrap-aarch64$vision.zip", _sdFilePathAarch64);
         setState(() {
-        msg +="写出文件:${_sdFilePathArm.path}\n";
+        msg +="写出文件:${_sdFilePathArm.path.replaceAll("v32", vision)}\n";
 
         });
         }else{
 
         setState(() {
-        msg +="文件已存在:${_sdFilePathAarch64.path}\n";
+        msg +="文件已存在:${_sdFilePathAarch64.path.replaceAll("v32", vision)}\n";
         });
 
         }
@@ -230,14 +230,14 @@ class MainActivityView extends State<MainActivityState> {
         loading = "50%";
         });
         if(!(await _sdFilePathArm.exists())){
-        UUtils.assetsWriterFile("assets/bootstrap-arm$name.zip", _sdFilePathArm);
+        UUtils.assetsWriterFile("assets/bootstrap-arm$vision.zip", _sdFilePathArm);
         setState(() {
 
-        msg +="写出文件:${_sdFilePathI686.path}\n";
+        msg +="写出文件:${_sdFilePathI686.path.replaceAll("v32", vision)}\n";
         });
         }else{
         setState(() {
-        msg +="文件已存在:${_sdFilePathI686.path}\n";
+        msg +="文件已存在:${_sdFilePathI686.path.replaceAll("v32", vision)}\n";
 
         });
 
@@ -247,15 +247,15 @@ class MainActivityView extends State<MainActivityState> {
 
         });
         if(!(await _sdFilePathI686.exists())){
-        UUtils.assetsWriterFile("assets/bootstrap-i686$name.zip", _sdFilePathI686);
+        UUtils.assetsWriterFile("assets/bootstrap-i686$vision.zip", _sdFilePathI686);
         setState(() {
 
-        msg +="写出文件:${_sdFilePathX86_64.path}\n";
+        msg +="写出文件:${_sdFilePathX86_64.path.replaceAll("v32", vision)}\n";
         });
         }else{
         setState(() {
 
-        msg +="文件已存在:${_sdFilePathX86_64.path}\n";
+        msg +="文件已存在:${_sdFilePathX86_64.path.replaceAll("v32", vision)}\n";
 
         });
         }
@@ -264,14 +264,14 @@ class MainActivityView extends State<MainActivityState> {
 
         });
         if(!(await _sdFilePathX86_64.exists())){
-        UUtils.assetsWriterFile("assets/bootstrap-x86_64$name.zip", _sdFilePathX86_64);
+        UUtils.assetsWriterFile("assets/bootstrap-x86_64$vision.zip", _sdFilePathX86_64);
         setState(() {
 
-        msg +="写出文件:${_sdFilePathX86_64.path}\n";
+        msg +="写出文件:${_sdFilePathX86_64.path.replaceAll("v32", vision)}\n";
         });
         }else{
         setState(() {
-        msg +="文件已存在:${_sdFilePathX86_64.path}\n";
+        msg +="文件已存在:${_sdFilePathX86_64.path.replaceAll("v32", vision)}\n";
 
         });
         }
